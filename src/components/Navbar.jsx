@@ -10,6 +10,7 @@ import {
   Container,
   Button,
   MenuItem,
+  Link,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -44,33 +45,87 @@ function Navbar() {
     <AppBar 
       position="fixed" 
       elevation={0} 
-      sx={{ 
-        background: 'linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))',
-        backdropFilter: 'blur(10px)'
+      sx={{
+        bgcolor: 'rgba(0, 0, 0, 0.8)',
+        backdropFilter: 'blur(10px)',
+        height: { xs: 72, sm: 84 },
+        display: 'flex',
+        alignItems: 'center',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
       }}
     >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          {/* Logo for larger screens */}
-          <Typography
-            variant="h6"
-            noWrap
+      <Container maxWidth="lg">
+        <Box sx={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'space-between',
+          height: '100%',
+          position: 'relative'
+        }}>
+          <Link
             component={RouterLink}
             to="/"
             sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontWeight: 700,
               textDecoration: 'none',
-              fontSize: '1.5rem',
+              color: 'white',
+              display: 'flex',
+              alignItems: 'center',
             }}
           >
-            <span style={{ color: '#F5F5F5' }}>sommi</span>
-            <span style={{ color: '#FF4B00' }}>pizza</span>
-          </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: 700,
+                fontSize: { xs: '1.5rem', sm: '1.75rem' },
+                '& .sommi': {
+                  color: '#F5F5F5',
+                },
+                '& .pizza': {
+                  color: '#FF4B00',
+                }
+              }}
+            >
+              <span className="sommi">sommi</span>
+              <span className="pizza">pizza</span>
+            </Typography>
+          </Link>
+
+          <Box sx={{ 
+            display: { xs: 'none', md: 'flex' }, 
+            gap: 4,
+            alignItems: 'center'
+          }}>
+            {pages.map((page) => (
+              <Link
+                key={page.path}
+                component={RouterLink}
+                to={page.path}
+                sx={{
+                  textDecoration: 'none',
+                  color: 'white',
+                  fontSize: '1.1rem',
+                  fontWeight: 500,
+                  transition: 'color 0.2s',
+                  '&:hover': {
+                    color: 'primary.main',
+                  },
+                }}
+              >
+                {page.name}
+              </Link>
+            ))}
+          </Box>
 
           {/* Mobile menu */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ 
+            display: { xs: 'flex', md: 'none' },
+            position: 'absolute',
+            right: 0,
+          }}>
             <IconButton
               size="large"
               aria-label="menu"
@@ -115,49 +170,7 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-
-          {/* Logo for mobile */}
-          <Typography
-            variant="h6"
-            noWrap
-            component={RouterLink}
-            to="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontWeight: 700,
-              textDecoration: 'none',
-              fontSize: '1.5rem',
-            }}
-          >
-            <span style={{ color: '#F5F5F5' }}>sommi</span>
-            <span style={{ color: '#FF4B00' }}>pizza</span>
-          </Typography>
-
-          {/* Desktop menu */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
-            {pages.map((page) => (
-              <Button
-                key={page.name}
-                component={RouterLink}
-                to={page.path}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  mx: 1,
-                  color: '#F5F5F5',
-                  display: 'block',
-                  '&:hover': {
-                    color: '#FF4B00',
-                  },
-                }}
-              >
-                {page.name}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
+        </Box>
       </Container>
     </AppBar>
   );

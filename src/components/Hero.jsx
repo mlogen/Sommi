@@ -10,25 +10,20 @@ function Hero() {
       component="section"
       id="hero"
       sx={{
-        height: '100vh',
         display: 'flex',
-        alignItems: 'flex-start',
+        alignItems: 'center',
         justifyContent: 'center',
         position: 'relative',
-        background: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8))',
-        bgcolor: 'background.default',
-        pt: { xs: 10, sm: 12 },
-        pb: 0,
-        overflow: 'hidden',
+        pt: { xs: 4, sm: 6 },
+        pb: { xs: 2, sm: 3 },
       }}
     >
       <Container 
         maxWidth="lg"
         sx={{
           display: 'flex',
-          alignItems: 'flex-start',
+          alignItems: 'center',
           justifyContent: 'center',
-          height: '100%',
           position: 'relative',
         }}
       >
@@ -41,77 +36,76 @@ function Hero() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'flex-start',
+            justifyContent: 'center',
             textAlign: 'center',
             width: '100%',
             maxWidth: '1000px',
             mx: 'auto',
-            mt: { xs: 2, sm: 3 },
           }}
         >
-          <Grid container spacing={3} sx={{ mb: 4, maxWidth: '900px', justifyContent: 'center', mx: 'auto' }}>
+          <Grid container spacing={2} sx={{ mb: 3 }}>
             {[home4, home1, home2].map((image, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
-                <Box
-                  component={motion.div}
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
-                  sx={{
-                    height: { xs: 200, sm: 220, md: 250 },
-                    borderRadius: 2,
-                    overflow: 'hidden',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                  }}
                 >
-                  <img
+                  <Box
+                    component="img"
                     src={image}
-                    alt={`Sommi Pizza ${index + 1}`}
-                    style={{
+                    alt={`Pizza ${index + 1}`}
+                    sx={{
                       width: '100%',
-                      height: '100%',
+                      height: { xs: 182, sm: 208, md: 234 },
                       objectFit: 'cover',
+                      borderRadius: 2,
+                      boxShadow: 3,
                     }}
                   />
-                </Box>
+                </motion.div>
               </Grid>
             ))}
           </Grid>
 
-          <Typography
-            variant="h1"
-            sx={{
-              fontWeight: 700,
-              mb: 2,
-              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
-              textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
-              '& .sommi': {
-                color: '#F5F5F5',
-              },
-              '& .pizza': {
-                color: '#FF4B00',
-              }
-            }}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
           >
-            <span className="sommi">sommi</span>
-            <span className="pizza">pizza</span>
-          </Typography>
-          <Typography
-            variant="h3"
-            sx={{
-              mb: 3,
-              fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.8rem' },
-              fontWeight: 400,
-              textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
-              color: 'secondary.main',
-              maxWidth: '800px',
-              whiteSpace: 'nowrap',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis'
-            }}
-          >
-            Bringing authentic wood-fired pizzas to your favorite spots
-          </Typography>
+            <Typography
+              variant="h4"
+              sx={{
+                textAlign: 'center',
+                fontWeight: 600,
+                color: 'white',
+                letterSpacing: 2,
+                lineHeight: 1.4,
+                maxWidth: '900px',
+                margin: '0 auto',
+                mt: 6,
+                mb: 8,
+                position: 'relative',
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  left: '50%',
+                  top: '-20px',
+                  transform: 'translateX(-50%)',
+                  width: '60px',
+                  height: '3px',
+                  background: 'primary.main',
+                  borderRadius: '2px',
+                },
+                '& .highlight': {
+                  color: 'primary.main',
+                  fontStyle: 'italic',
+                }
+              }}
+            >
+              Bringing <span className="highlight">authentic wood-fired</span> pizzas to your favorite spots
+            </Typography>
+          </motion.div>
         </Box>
       </Container>
     </Box>

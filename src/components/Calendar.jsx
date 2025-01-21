@@ -50,12 +50,9 @@ function Calendar() {
       id="locations"
       component="section"
       sx={{
-        py: 2,
-        pb: 6,
-        bgcolor: 'rgba(0, 0, 0, 0.7)',
         position: 'relative',
         width: '100%',
-        mt: { xs: 4, md: 'auto' },
+        pt: 0,
       }}
     >
       <Container maxWidth="lg">
@@ -67,16 +64,16 @@ function Calendar() {
           viewport={{ once: true }}
           align="center"
           sx={{ 
-            mb: { xs: 3, md: 2 },
-            fontWeight: 700, 
+            mb: { xs: 2, md: 2 },
+            fontWeight: 600, 
             color: 'white',
-            fontSize: { xs: '1.75rem', md: '2.125rem' }
+            fontSize: { xs: '1.25rem', md: '1.5rem' }
           }}
         >
           Where to Find Us
         </Typography>
 
-        <Grid container spacing={{ xs: 2, md: 3 }}>
+        <Grid container spacing={{ xs: 1, md: 2 }}>
           {locations.map((item, index) => (
             <Grid item xs={12} md={4} key={index}>
               <Card
@@ -87,34 +84,29 @@ function Calendar() {
                 transition={{ delay: index * 0.1 }}
                 elevation={2}
                 sx={{
-                  height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
                   bgcolor: 'rgba(0, 0, 0, 0.5)',
                   backdropFilter: 'blur(10px)',
                   color: 'white',
-                  '&:hover': {
-                    transform: { xs: 'none', md: 'translateY(-4px)' },
-                    transition: 'transform 0.2s',
-                  },
                 }}
               >
-                <CardContent>
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                    <CalendarMonth sx={{ color: 'primary.main', mr: 1 }} />
+                <CardContent sx={{ p: { xs: 1.5, sm: 2 } }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 0.5 }}>
+                    <CalendarMonth sx={{ color: 'primary.main', mr: 1, fontSize: '1.1rem' }} />
                     <Box>
-                      <Typography variant="h6" component="h3">
+                      <Typography variant="h6" component="h3" sx={{ fontSize: { xs: '0.9rem', sm: '1rem' } }}>
                         {item.day}
                       </Typography>
-                      <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+                      <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.75rem' }}>
                         {item.dates[0]} & {item.dates[1]}
                       </Typography>
                     </Box>
                   </Box>
-                  <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 1 }}>
-                    <LocationOn sx={{ color: 'primary.main', mr: 1, mt: 0.5 }} />
+                  <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 0.5 }}>
+                    <LocationOn sx={{ color: 'primary.main', mr: 1, mt: 0.25, fontSize: '1.1rem' }} />
                     <Box>
-                      <Typography variant="subtitle1">{item.location}</Typography>
+                      <Typography variant="subtitle1" sx={{ fontSize: { xs: '0.85rem', sm: '0.9rem' } }}>{item.location}</Typography>
                       <Link 
                         href={item.mapsUrl} 
                         target="_blank" 
@@ -125,18 +117,19 @@ function Calendar() {
                           '&:hover': {
                             textDecoration: 'underline',
                             color: 'primary.main'
-                          }
+                          },
+                          fontSize: '0.75rem'
                         }}
                       >
-                        <Typography variant="body2">
+                        <Typography variant="body2" sx={{ fontSize: 'inherit' }}>
                           {item.address}
                         </Typography>
                       </Link>
                     </Box>
                   </Box>
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <AccessTime sx={{ color: 'primary.main', mr: 1 }} />
-                    <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+                    <AccessTime sx={{ color: 'primary.main', mr: 1, fontSize: '1.1rem' }} />
+                    <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.75rem' }}>
                       {item.time}
                     </Typography>
                   </Box>

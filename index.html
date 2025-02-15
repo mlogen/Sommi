@@ -1,14 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/pizza-icon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Sommi Pizza - Artisan wood-fired pizzas on the move" />
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/pizza-icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sommi Pizza - Artisan wood-fired pizzas on the move">
     <title>Sommi Pizza</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">SOMMI<span class="brand-pizza">PIZZA</span></a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-slider">
+                <img src="assets/images/home1.jpeg" alt="Sommi Pizza Experience" class="hero-image">
+                <img src="assets/images/home2.jpeg" alt="Wood-fired Pizza" class="hero-image">
+                <img src="assets/images/home3.jpeg" alt="Fresh Ingredients" class="hero-image">
+                <img src="assets/images/home4.png" alt="Pizza Making" class="hero-image">
+            </div>
+            <div class="container">
+                <h1>Welcome to Sommi Pizza</h1>
+                <p class="tagline">Bringing <span class="highlight">authentic wood-fired</span> pizzas to your favorite spots</p>
+            </div>
+        </section>
+
+        <section class="calendar">
+            <div class="container">
+                <h2>Where to Find Us</h2>
+                <p class="calendar-intro">Check our weekly schedule to find us at your favorite spots</p>
+                
+                <div class="schedule-grid">
+                    <div class="schedule-item">
+                        <h3>Monday</h3>
+                        <p class="location">Sevenoaks Market</p>
+                        <p class="time">12:00 - 20:00</p>
+                    </div>
+                    <div class="schedule-item">
+                        <h3>Tuesday</h3>
+                        <p class="location">Greenwich Park</p>
+                        <p class="time">11:30 - 21:00</p>
+                    </div>
+                    <div class="schedule-item">
+                        <h3>Wednesday</h3>
+                        <p class="location">Camden Market</p>
+                        <p class="time">12:00 - 22:00</p>
+                    </div>
+                    <div class="schedule-item">
+                        <h3>Thursday</h3>
+                        <p class="location">Spitalfields</p>
+                        <p class="time">11:00 - 21:00</p>
+                    </div>
+                    <div class="schedule-item">
+                        <h3>Friday</h3>
+                        <p class="location">Borough Market</p>
+                        <p class="time">12:00 - 22:00</p>
+                    </div>
+                    <div class="schedule-item">
+                        <h3>Saturday</h3>
+                        <p class="location">Maltby Street Market</p>
+                        <p class="time">11:00 - 22:00</p>
+                    </div>
+                    <div class="schedule-item">
+                        <h3>Sunday</h3>
+                        <p class="location">Victoria Park</p>
+                        <p class="time">12:00 - 20:00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SOMMI<span class="brand-pizza">PIZZA</span></h4>
+                    <p>Bringing authentic wood-fired pizzas to your favorite spots around London, the South & South East. Available for private events and celebrations.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SOMMI<span class="brand-pizza">PIZZA</span>. All rights reserved.</p>
+                <button class="scroll-to-top" aria-label="Scroll to top">↑</button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -151,6 +151,14 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.hero h1 .sommi {
+    color: var(--light-color);
+}
+
+.hero h1 .brand-pizza {
+    color: var(--primary-color);
+}
+
 .hero .tagline {
     font-size: 1.5rem;
     max-width: 800px;
@@ -339,6 +347,10 @@ footer {
     text-align: center;
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: var(--light-color);
+}
+
+.menu-section h1 .brand-pizza {
     color: var(--primary-color);
 }
 
@@ -875,6 +887,10 @@ footer {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    color: var(--light-color);
+}
+
+.calendar h2 .brand-pizza {
     color: var(--primary-color);
 }
 

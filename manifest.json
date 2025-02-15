@@ -1,0 +1,37 @@
+{
+    "name": "Sommi Pizza",
+    "short_name": "Sommi",
+    "description": "Authentic wood-fired pizzas in London",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#FF7103",
+    "icons": [
+        {
+            "src": "assets/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "orientation": "portrait",
+    "categories": ["food", "restaurant", "catering"],
+    "shortcuts": [
+        {
+            "name": "View Menu",
+            "url": "/menu.html",
+            "icons": [{ "src": "assets/icons/menu-96x96.png", "sizes": "96x96" }]
+        },
+        {
+            "name": "Contact Us",
+            "url": "/contact.html",
+            "icons": [{ "src": "assets/icons/contact-96x96.png", "sizes": "96x96" }]
+        }
+    ]
+} 
